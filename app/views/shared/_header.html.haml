@@ -1,5 +1,16 @@
 .header
-  .header__logo Blogs
+  .header__logo 
+    =link_to "Blogs", root_path
   %ul.menu
-    %li.menu1 Sign Up
-    %li.menu2 Log In
+    - if user_signed_in?
+      %li.menu1
+        = Post
+      %li.menu2
+        = link_to "My Page", user_path
+      %li.menu3
+        = link_to "Log Out", destroy_user_session_path, method: :delete
+    - else
+      %li.menu1
+        = link_to "Sign Up", new_user_registration_path, class: 'btn'
+      %li.menu2
+        = link_to "Log In", new_user_session_path, class: 'btn'
