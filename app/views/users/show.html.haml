@@ -1,0 +1,17 @@
+.wrapper
+  =render partial: "shared/header"
+
+  .side
+    =render partial: "shared/side"
+
+  .user-main
+    .profile
+      %h2 MyPage
+      %h3 Profile
+        .profile__name Name
+          = current_user.name
+        .profile__about About
+          = current_user.about
+    .posts
+      %h3 Posts
+
