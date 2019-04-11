@@ -1,0 +1,26 @@
+.wrapper
+  =render partial: "shared/header"
+
+  .side
+    =render partial: "shared/side"
+
+  .user-main
+    .profile
+      %h2 Edit Profile
+      .profile__form
+        = form_for(current_user) do |f|
+          .field
+            .field__label
+              = f.label :name
+            .field__input
+              = f.text_field :name
+            .field__label
+              = f.label :email
+            .field__input
+              = f.text_field :email
+            .field__label
+              = f.label :about
+            .field__input
+              = f.text_field :about
+            .action
+              = f.submit "Update", class: 'btn'

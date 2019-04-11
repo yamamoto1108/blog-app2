@@ -12,6 +12,9 @@
           = current_user.name
         .profile__about About
           = current_user.about
+      .edit_btn
+        = link_to "Edit", edit_user_path(current_user), class="btn"
+        
     .posts
       %h3 Posts
       = render partial: "users/post"
