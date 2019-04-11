@@ -1,0 +1,35 @@
+.post {
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #424242;
+  &__head {
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    &__title {
+      font-size: 20px;
+      flex-grow: 1;
+    }
+    &__date {
+      margin-left: 10px;
+    }
+  }
+  &__links {
+    display: flex;
+    &__tag {
+      flex-grow: 1;
+    }
+    &__delete {
+      margin-left: 10px;
+    }
+  }
+  &__foot {
+    display: flex;
+    &__comment {
+      flex-grow: 1;
+    }
+    &__like {
+      margin-left: 10px;
+    }
+  }
+}

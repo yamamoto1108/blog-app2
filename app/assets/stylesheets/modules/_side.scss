@@ -1,0 +1,10 @@
+.side_bar {
+  background-color: #ffecb3;
+  width: 180px;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+  padding-left: 20px;
+  float: left;
+  overflow: scroll;
+  position: fixed;
+}

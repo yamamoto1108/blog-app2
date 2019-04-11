@@ -1,0 +1,25 @@
+.header {
+  width: 100vw;
+  height: 75px;
+  background-color: #ffd54f;
+  color: #ffffff;
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  &__logo {
+    padding: 10px 20px;
+    font-size: 30px;
+    flex-grow: 1;
+  }
+  .menu {
+    padding-right: 20px;
+    line-height: 75px;
+    .menu1 {
+      float: left;
+      padding-right: 20px;
+    }
+    .menu2 {
+      float: left;
+    }
+  }
+}
