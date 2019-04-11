@@ -10,6 +10,10 @@
     padding: 10px 20px;
     font-size: 30px;
     flex-grow: 1;
+    .btn {
+      color: #ffffff;
+      text-decoration: none;
+    }
   }
   .menu {
     padding-right: 20px;
@@ -17,9 +21,25 @@
     .menu1 {
       float: left;
       padding-right: 20px;
+      .btn {
+        color: #ffffff;
+        text-decoration: none;
+      }
     }
     .menu2 {
       float: left;
+      padding-right: 20px;
+      .btn {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+    .menu3 {
+      float: left;
+      .btn {
+        color: #ffffff;
+        text-decoration: none;
+      }
     }
   }
 }
