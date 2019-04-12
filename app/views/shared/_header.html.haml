@@ -4,7 +4,7 @@
   %ul.menu
     - if user_signed_in?
       %li.menu1
-        = Post
+        = link_to "Posting", new_post_path, class: 'btn'
       %li.menu2
         = "My Page"
       %li.menu3

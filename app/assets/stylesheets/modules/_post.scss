@@ -3,6 +3,7 @@
   padding: 10px;
   margin-bottom: 20px;
   color: #424242;
+  max-width: 700px;
   &__head {
     border-bottom: 1px solid #eeeeee;
     display: flex;
@@ -13,6 +14,11 @@
     &__date {
       margin-left: 10px;
     }
+  }
+  &__text {
+    word-wrap: break-word;
+    padding-top: 15px;
+    padding-bottom: 15px;
   }
   &__links {
     display: flex;
