@@ -1,4 +1,3 @@
 .notification
-  - if flash[:notice]
-    %p
-    = flash[:notice]
+  - flash.each do |message_type, message|
+    = message

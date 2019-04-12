@@ -7,3 +7,5 @@
   .main
     %h2 Posts
     =render partial: "posts/post", collection: @posts
+
+    = paginate(@posts)
