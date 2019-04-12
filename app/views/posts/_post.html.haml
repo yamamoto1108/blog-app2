@@ -13,7 +13,8 @@
     = image_tag post.image.url if post.image.present?
   .post__links
     .post__links__tag #tag
-    .post__links__edit edit
+    .post__links__edit
+      = link_to "Edit", "/posts/#{post.id}/edit", class: "btn"
     .post__links__delete delete
   .post__foot
     .post__foot__comment comment

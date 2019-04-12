@@ -1,0 +1,23 @@
+.wrapper
+  =render partial: "shared/header"
+
+  .side
+    =render partial: "shared/side"
+
+  .main
+    %h2 編集する
+    = form_for @post do |f|
+      .field
+        = f.label :title
+        %br/
+        = f.text_field :title, placeholder: "Title"
+      .field
+        = f.label :text
+        %br/
+        = f.text_area :text, placeholder: "Text"
+      .field
+        = f.label :image
+        %br/
+        = f.file_field :image
+      %br/
+      = f.submit "Update", class: "btn"
