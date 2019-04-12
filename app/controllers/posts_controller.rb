@@ -30,6 +30,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find(params[:id])
+    if post.user_id == current_user.id
+      post.destroy
+      redirect_to root_path, notice: "削除しました"
+    end
+  end
+
   private
 
   def post_params

@@ -15,7 +15,8 @@
     .post__links__tag #tag
     .post__links__edit
       = link_to "Edit", "/posts/#{post.id}/edit", class: "btn"
-    .post__links__delete delete
+    .post__links__delete
+      = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "btn"
   .post__foot
     .post__foot__comment comment
     .post__foot__write write
