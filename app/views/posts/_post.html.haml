@@ -20,7 +20,8 @@
   .post__foot
     .post__foot__comment comment
     .post__foot__write write
-    .post__foot__like like
+    .post__foot__like
+      = render 'likes/like', post: post
 
 -# .post
 -#   .post__head
