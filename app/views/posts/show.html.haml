@@ -22,9 +22,9 @@
       .post__links
         .post__links__tag #tag
         .post__links__edit
-          = link_to "Edit", "/posts/#{@post.id}/edit", class: "btn"
+          = link_to "Edit", "/posts/#{@post.id}/edit", class: "post-btn"
         .post__links__delete
-          = link_to "Delete", "/posts/#{@post.id}", method: :delete, class: "btn"
+          = link_to "Delete", "/posts/#{@post.id}", method: :delete, class: "post-btn"
         .post__links__like
           /= render 'likes/like', @post: post
       .post__foot
@@ -33,3 +33,14 @@
             .field
               = f.text_area :text, placeholder: "Comment"
             = f.submit "Send", class:"btn"
+    .comments
+      %h2 Comments
+      - if @comments
+        - @post.comments.each do |comment|
+          .comment
+            %p.comment__name
+              = comment.user.name
+            %p.comment__text
+              = comment.text
+      - else
+        %p コメントはありません

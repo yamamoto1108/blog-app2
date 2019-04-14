@@ -14,11 +14,11 @@
   .post__links
     .post__links__tag #tag
     .post__links__edit
-      = link_to "Edit", "/posts/#{post.id}/edit", class: "btn"
+      = link_to "Edit", "/posts/#{post.id}/edit", class: "post-btn"
     .post__links__delete
-      = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "btn"
+      = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "post-btn"
     .post__links__like
       = render 'likes/like', post: post
   .post__foot
     .post__foot__comment
-      = link_to "Comment", "/posts/#{post.id}", class: "btn"
+      = link_to "Comment", "/posts/#{post.id}", class: "post-btn"

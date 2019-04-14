@@ -5,13 +5,15 @@ class CommentsController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to post_path
-      notice: "コメントしました"
+      redirect_to post_path(@post), notice: "コメントしました"
     else
       render "posts/show"
     end
+    # Comment.create(comment_params)
+    # redirect_to post_path(@post), notice: "コメントしました"
   end
 
   private

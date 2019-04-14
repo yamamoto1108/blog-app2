@@ -1,0 +1,18 @@
+.comment {
+  //background-color: red;
+  border: 1px solid #eeeeee;
+  padding: 10px;
+  margin: 0 auto;
+  color: #424242;
+  max-width: 700px;
+  &__name {
+    display: inline-block;
+    padding-right: 10px;
+    border-right: 1px solid #eeeeee;
+  }
+  &__text {
+    display: inline-block;
+    word-wrap: break-word;
+    max-width: 700px;
+  }
+}
