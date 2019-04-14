@@ -4,6 +4,7 @@
   margin-bottom: 20px;
   color: #424242;
   max-width: 700px;
+  margin: 0 auto;
   &__head {
     border-bottom: 1px solid #eeeeee;
     display: flex;
@@ -28,14 +29,20 @@
     &__delete {
       margin-left: 10px;
     }
-  }
-  &__foot {
-    display: flex;
-    &__comment {
-      flex-grow: 1;
-    }
     &__like {
       margin-left: 10px;
     }
   }
+  &__foot {
+    display: flex;
+    &__comment {
+      //flex-grow: 1;
+    }
+    
+  }
+}
+
+.post-btn {
+  color: #424242;
+  text-decoration: none;
 }

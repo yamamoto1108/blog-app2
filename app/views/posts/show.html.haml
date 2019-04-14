@@ -1,0 +1,46 @@
+.wrapper
+  =render partial: "shared/header"
+
+  .side
+    =render partial: "shared/side"
+
+  .main
+    %h2 Post
+    .post
+      .post__head
+        .post__head__title
+          %span
+          = @post.title
+        .post__head__user
+          name
+        .post__head__date
+          = @post.created_at.strftime("%Y/%m/%d %H:%M")
+      .post__text
+        = @post.text
+      .post__image
+        = image_tag @post.image.url if @post.image.present?
+      .post__links
+        .post__links__tag #tag
+        .post__links__edit
+          = link_to "Edit", "/posts/#{@post.id}/edit", class: "post-btn"
+        .post__links__delete
+          = link_to "Delete", "/posts/#{@post.id}", method: :delete, class: "post-btn"
+        .post__links__like
+          /= render 'likes/like', @post: post
+      .post__foot
+        .post__foot__comment
+          = form_for [@post, @comment] do |f|
+            .field
+              = f.text_area :text, placeholder: "Comment"
+            = f.submit "Send", class:"btn"
+    .comments
+      %h2 Comments
+      - if @comments
+        - @post.comments.each do |comment|
+          .comment
+            %p.comment__name
+              = comment.user.name
+            %p.comment__text
+              = comment.text
+      - else
+        %p コメントはありません
