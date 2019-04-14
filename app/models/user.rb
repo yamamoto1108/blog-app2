@@ -6,4 +6,5 @@ class User < ApplicationRecord
 has_many :posts
 has_many :like_posts, through: :likes, source: :post
 has_many :likes, dependent: :destroy
+has_many :posts
 end
