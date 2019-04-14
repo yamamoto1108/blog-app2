@@ -17,25 +17,8 @@
       = link_to "Edit", "/posts/#{post.id}/edit", class: "btn"
     .post__links__delete
       = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "btn"
-  .post__foot
-    .post__foot__comment comment
-    .post__foot__write write
-    .post__foot__like
+    .post__links__like
       = render 'likes/like', post: post
-
--# .post
--#   .post__head
--#     .post__head__title
--#       %span Title
--#     .post__head__user user
--#     .post__head__date date
--#   .post__text text
--#   .post__image image
--#   .post__links
--#     .post__links__tag #tag
--#     .post__links__edit edit
--#     .post__links__delete delete
--#   .post__foot
--#     .post__foot__comment comment
--#     .post__foot__write write
--#     .post__foot__like like
+  .post__foot
+    .post__foot__comment
+      = link_to "Comment", "/posts/#{post.id}", class: "btn"
