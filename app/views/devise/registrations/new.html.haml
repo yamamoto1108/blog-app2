@@ -31,6 +31,8 @@
         = f.label :about
         %br/
         = f.text_area :about, autofocus: true
+      .field
+        = f.file_field :avatar
       .actions
         = f.submit "Sign up"
     = render "devise/shared/links"
