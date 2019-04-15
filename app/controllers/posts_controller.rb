@@ -50,6 +50,11 @@ class PostsController < ApplicationController
     @tags = Tag.all
   end
 
+  def search
+    @posts = Post.search(params[:search])
+    @tags = Tag.all
+  end
+
   private
 
   def post_params
