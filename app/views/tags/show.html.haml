@@ -5,7 +5,7 @@
     =render partial: "shared/side", collection: @tags
 
   .main
-    %h2 Posts
+    %h2 Posts(#{@tag.tag})
     =render partial: "tags/post", collection: @posts
 
     = paginate(@posts)
