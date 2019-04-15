@@ -1,2 +1,6 @@
 .side_bar
   .search Search
+
+  .genre
+  - @tags.each do |tag|
+    = tag.tag

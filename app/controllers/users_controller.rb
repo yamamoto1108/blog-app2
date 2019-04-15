@@ -5,9 +5,11 @@ class UsersController < ApplicationController
     @about = @user.about
     @avatar = @user.avatar
     @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
+    @tags = Tag.all
   end
 
   def edit
+    @tags = Tag.all
   end
 
   def update
