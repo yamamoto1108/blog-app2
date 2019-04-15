@@ -19,5 +19,9 @@
         = f.label :image
         %br/
         = f.file_field :image
+      .field
+        = f.label :genre
+        %br/
+        = f.collection_check_boxes :tag_ids, Tag.all, :id, :tag
       %br/
       = f.submit "Send", class: "btn"
