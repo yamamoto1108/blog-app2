@@ -12,14 +12,18 @@
   .post__image
     = image_tag post.image.url if post.image.present?
   .post__links
-    .post__links__tag #tag
-    - if user_signed_in?
-      .post__links__edit
-        = link_to "Edit", "/posts/#{post.id}/edit", class: "post-btn" if current_user.id == post.user.id
-      .post__links__delete
-        = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "post-btn" if current_user.id == post.user.id
-      .post__links__like
-        = render 'likes/like', post: post
+    .post__links__genre #Genre
+    .post__links__tag
+      - if post.tags.present?
+        - post.tags.each do |tag|
+          = tag.tag
   .post__foot
     .post__foot__comment
       = link_to "Comment", "/posts/#{post.id}", class: "post-btn"
+    - if user_signed_in?
+      .post__foot__edit
+        = link_to "Edit", "/posts/#{post.id}/edit", class: "post-btn" if current_user.id == post.user.id
+      .post__foot__delete
+        = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "post-btn" if current_user.id == post.user.id
+      .post__foot__like
+        = render 'likes/like', post: post
