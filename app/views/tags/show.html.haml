@@ -1,0 +1,11 @@
+.wrapper
+  =render partial: "shared/header"
+
+  .side
+    =render partial: "shared/side", collection: @tags
+
+  .main
+    %h2 Posts
+    =render partial: "tags/post", collection: @posts
+
+    = paginate(@posts)
