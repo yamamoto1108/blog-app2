@@ -50,6 +50,11 @@ class PostsController < ApplicationController
     @tags = Tag.all
   end
 
+  def search
+    @posts = Post.search(params[:search]).page(params[:page]).per(5).order("created_at DESC")
+    @tags = Tag.all
+  end
+
   private
 
   def post_params

@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :posts do
     resources :comments, only: [:new, :create]
+    collection do
+      get 'search'
+    end
   end
   resources :tags, only: [:show]
   post "/like/:post_id" => "likes#like", as: 'like'
