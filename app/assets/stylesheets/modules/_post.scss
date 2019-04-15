@@ -23,6 +23,15 @@
   &__links {
     display: flex;
     &__tag {
+      margin-left: 10px
+    }
+    %li {
+      list-style: none;
+    }
+  }
+  &__foot {
+    display: flex;
+    &__comment {
       flex-grow: 1;
     }
     &__delete {
@@ -31,17 +40,11 @@
     &__like {
       margin-left: 10px;
     }
-  }
-  &__foot {
-    display: flex;
-    &__comment {
-      //flex-grow: 1;
-    }
     
   }
 }
 
 .post-btn {
-  color: #424242;
+  color: #ffa726;
   text-decoration: none;
 }

@@ -2,7 +2,7 @@
   =render partial: "shared/header"
 
   .side
-    =render partial: "shared/side"
+    =render partial: "shared/side", collection: @tags
 
   .main
     %h2 投稿する
@@ -19,5 +19,10 @@
         = f.label :image
         %br/
         = f.file_field :image
+      .field
+        = f.label :genre
+        %br/
+        = f.collection_check_boxes :tag_ids, Tag.all, :id, :tag do |b|
+          = b.label{ b.check_box + b.text }
       %br/
       = f.submit "Send", class: "btn"

@@ -1,2 +1,7 @@
 .side_bar
   .search Search
+
+  .genre Genre
+  - @tags.each do |tag|
+    .genle__link
+    = link_to "#{tag.tag}", "/tags/#{tag.id}", class: "genre-btn"

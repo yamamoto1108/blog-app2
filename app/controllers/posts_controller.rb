@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.page(params[:page]).per(5).order("created_at DESC")
+    @tags = Tag.all
   end
 
   def new
     @post = Post.new
+    @tags = Tag.all
   end
 
   def create
@@ -19,6 +21,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tags = Tag.all
   end
 
   def update
@@ -44,11 +47,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
+    @tags = Tag.all
   end
 
   private
 
   def post_params
-    params.require(:post).permit(:title, :text, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :image, tag_ids: []).merge(user_id: current_user.id)
   end
 end
