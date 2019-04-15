@@ -12,7 +12,7 @@
           %span
           = @post.title
         .post__head__user
-          name
+          = link_to "#{@post.user.name}", "/users/#{@post.user.id}", class: 'post-btn'
         .post__head__date
           = @post.created_at.strftime("%Y/%m/%d %H:%M")
       .post__text
@@ -22,9 +22,9 @@
       .post__links
         .post__links__tag #tag
         .post__links__edit
-          = link_to "Edit", "/posts/#{@post.id}/edit", class: "post-btn"
+          = link_to "Edit", "/posts/#{@post.id}/edit", class: "post-btn" if current_user.id == @post.user.id
         .post__links__delete
-          = link_to "Delete", "/posts/#{@post.id}", method: :delete, class: "post-btn"
+          = link_to "Delete", "/posts/#{@post.id}", method: :delete, class: "post-btn" if current_user.id == @post.user.id
         .post__links__like
           /= render 'likes/like', @post: post
       .post__foot

@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   def show
-    @name = current_user.name
-    @about = current_user.about
-    #@posts = Post.where(user_id: current_user.id).page(params[:page]).per(5).order("created_at DESC")
+    @user = User.find(params[:id])
+    @name = @user.name
+    @about = @user.about
+    @avatar = @user.avatar
+    @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
   end
 
   def edit
@@ -10,7 +12,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redilect_to user_path
+      redirect_to user_path
     else
       render :edit
     end
