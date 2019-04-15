@@ -4,18 +4,23 @@
   .side
     =render partial: "shared/side"
 
-  .user-main
+  .main
+    %h2 Profile
     .profile
-      %h2 MyPage
-      %h3 Profile
-        .profile__name Name
-          = current_user.name
-        .profile__about About
-          = current_user.about
+      .profile__image
+      -# - if current_user.avatar? && @user == current_user
+      -#   = image_tag current_user.avatar.variant(resize: '200x200')
+      .profile__name
+        = @name
+      .profile__about
+        = @about
       .edit_btn
-        = link_to "Edit", edit_user_path(current_user), class="btn"
-        
-    .posts
-      %h3 Posts
-      = render partial: "users/post"
+      - if @user == current_user
+        = link_to "Edit", "/users/#{current_user.id}/edit", class: "post-btn"
+      
+  
+    %h2 Posts
+    = render partial: "users/post", collection: @posts
+
+    = paginate(@posts)
 
