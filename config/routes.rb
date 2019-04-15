@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'likes/create'
-  get 'likes/destroy'
   devise_for :users
   resources :users, only: [:show, :edit, :update]
   resources :posts do
