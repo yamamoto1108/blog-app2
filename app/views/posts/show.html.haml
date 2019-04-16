@@ -43,7 +43,7 @@
         - @post.comments.each do |comment|
           .comment
             %p.comment__name
-              = comment.user.name
+              = link_to "#{@post.user.name}", "/users/#{@post.user.id}", class: 'post-btn'
             %p.comment__text
               = comment.text
       - else
