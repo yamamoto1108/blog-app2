@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.page(params[:page]).per(5).order("created_at DESC")
+    @posts = Post.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @tags = Tag.all
   end
 
@@ -51,7 +51,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:search]).page(params[:page]).per(5).order("created_at DESC")
+    @posts = Post.search(params[:search]).includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @tags = Tag.all
   end
 

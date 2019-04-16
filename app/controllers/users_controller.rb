@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     @name = @user.name
     @about = @user.about
     @avatar = @user.avatar
-    @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
+    @posts = @user.posts.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @tags = Tag.all
   end
 
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   def update
     if current_user.update(user_params)
-      redirect_to user_path
+      redirect_to user_path, notice: "更新しました"
     else
       render :edit
     end
