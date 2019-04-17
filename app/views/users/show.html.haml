@@ -7,19 +7,20 @@
   .main
     %h2 Profile
     .profile
-      .profile__image
-      -# - if current_user.avatar? && @user == current_user
-      -#   = image_tag current_user.avatar.variant(resize: '200x200')
-      .profile__name
-        = @name
-      .profile__about
-        = @about
-      .edit_btn
-      - if @user == current_user
-        = link_to "Edit", "/users/#{current_user.id}/edit", class: "post-btn"
+      .profile__head
+        .profile__head__name
+          = @name
+        .edit_btn
+        - if @user == current_user
+          = link_to "Edit", "/users/#{current_user.id}/edit", class: "post-btn"
+      .profile__body
+        .profile__body__image
+          = image_tag @user.image.url if @user.image.present?
+        .profile__body__about
+          = @about
       
   
-    %h2 Posts
+    %h2 Posts by #{@name}
     = render partial: "users/post", collection: @posts
 
     = paginate(@posts)
