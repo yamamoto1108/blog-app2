@@ -5,17 +5,26 @@
   color: #424242;
   max-width: 700px;
   margin: 0 auto 20px auto;
-  &__image {
-    float: left;
-    margin-right: 10px;
+  &__head {
+    display: flex;
+    &__name {
+      //background-color: gray;
+      font-size: 20px;
+      border-bottom: 1px solid #eeeeee;
+      flex-grow: 1;
+    }
   }
-  &__name {
-    //background-color: gray;
-    font-size: 20px;
-    border-bottom: 1px solid #eeeeee;
-  }
-  &__about {
-    //background-color: yellow;
-    word-wrap: break-word;
+  &__body {
+    display: flex;
+    margin: 10px;
+    &__image {
+      float: left;
+      margin-right: 10px;
+    }
+    &__about {
+      //background-color: yellow;
+      word-wrap: break-word;
+      min-width: 80px;
+    }
   }
 }

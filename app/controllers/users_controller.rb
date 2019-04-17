@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @name = @user.name
     @about = @user.about
-    @avatar = @user.avatar
+    @image = @user.image
     @posts = @user.posts.includes(:user).page(params[:page]).per(5).order("created_at DESC")
     @tags = Tag.all
   end
@@ -23,6 +23,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :about)
+    params.require(:user).permit(:name, :email, :about, :image)
   end
 end
