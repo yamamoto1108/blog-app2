@@ -8,7 +8,7 @@ has_many :like_posts, through: :likes, source: :post
 has_many :likes, dependent: :destroy
 has_many :comments, dependent: :destroy
 
-has_one_attached :avatar
+mount_uploader :image, ImageUploader
 validates :email, presence: true
 validates :name, presence: true
 end
