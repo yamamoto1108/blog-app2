@@ -1,12 +1,16 @@
 .side_bar {
   background-color: #ffecb3;
   width: 200px;
-  height: calc(100vh - 95px);
-  padding-top: 95px;
+  height: calc(100vh - 75px);
+  //padding-top: 10px;
   padding-left: 20px;
   float: left;
   overflow: scroll;
   position: fixed;
+
+  .search {
+    margin-top: 20px;
+  }
   .genre {
     margin-top: 20px;
   }
