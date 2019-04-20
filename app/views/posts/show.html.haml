@@ -35,7 +35,7 @@
       .post__comment
         = form_for [@post, @comment] do |f|
           .field
-            = f.text_area :text, placeholder: "Comment"
+            = f.text_area :text, placeholder: "Comment", class: "field__text"
           = f.submit "Send", class:"btn"
     .comments
       %h2 Comments

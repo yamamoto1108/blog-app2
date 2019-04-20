@@ -31,6 +31,7 @@
   }
   &__foot {
     display: flex;
+    line-height: 42px;
     &__comment {
       flex-grow: 1;
     }
@@ -44,10 +45,18 @@
   }
   &__comment {
     margin: 10px;
+    padding-top: 20px;
+    border-top: 1px solid #eeeeee;
   }
 }
 
 .post-btn {
   color: #ffa726;
   text-decoration: none;
+}
+
+.field {
+  &__text {
+    width: 600px;
+  }
 }
