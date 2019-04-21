@@ -19,11 +19,14 @@
           = tag.tag
   .post__foot
     .post__foot__comment
-      = link_to "Comment", "/posts/#{post.id}", class: "post-btn"
+      = link_to "/posts/#{post.id}" do
+        = fa_icon 'comments', class: "post-btn"
     - if user_signed_in?
       .post__foot__edit
-        = link_to "Edit", "/posts/#{post.id}/edit", class: "post-btn" if current_user.id == post.user.id
+        = link_to "/posts/#{post.id}/edit" do
+          = fa_icon 'edit', class: "post-btn" if current_user.id == post.user.id
       .post__foot__delete
-        = link_to "Delete", "/posts/#{post.id}", method: :delete, class: "post-btn" if current_user.id == post.user.id
+        = link_to "/posts/#{post.id}", method: :delete do
+          = fa_icon 'trash', class: "post-btn" if current_user.id == post.user.id
       .post__foot__like
         = render 'likes/like', post: post

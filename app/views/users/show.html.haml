@@ -12,7 +12,8 @@
           = @name
         .edit_btn
         - if @user == current_user
-          = link_to "Edit", "/users/#{current_user.id}/edit", class: "post-btn"
+          = link_to "/users/#{current_user.id}/edit" do
+            = fa_icon 'edit', class: "post-btn"
       .profile__body
         .profile__body__image
           = image_tag @user.image.url if @user.image.present?
