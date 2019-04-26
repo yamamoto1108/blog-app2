@@ -20,6 +20,10 @@
     &__image {
       float: left;
       margin-right: 10px;
+      img {
+        max-height: 200px;
+        max-width: 300px;
+      }
     }
     &__about {
       //background-color: yellow;
